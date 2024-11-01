@@ -18,7 +18,6 @@ internal sealed class UpdateLeadCommandHandler(
         var lead = await leadRepository
             .WhereWithTracking(l => l.Id == request.Id)
             .FirstOrDefaultAsync(cancellationToken);
-            
         if(lead is null)
             return Result<Lead>.Failure("Müşteri bulunamadı");
             
