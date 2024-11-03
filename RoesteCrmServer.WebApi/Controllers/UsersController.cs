@@ -12,12 +12,8 @@ using RoesteCrmServer.WebApi.Abstractions;
 namespace RoesteCrmServer.WebApi.Controllers;
 
 [Authorize(Roles = "Admin, Manager")]
-public class UsersController: ApiController
+public class UsersController(IMediator mediator) : ApiController(mediator)
 {
-    public UsersController(IMediator mediator) : base(mediator)
-    {
-    }
-    
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery]GetAllUserQuery query, CancellationToken cancellationToken)
     {

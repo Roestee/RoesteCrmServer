@@ -1,16 +1,14 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RoesteCrmServer.Application.Features.Ratings.GetAllRatings;
 using RoesteCrmServer.WebApi.Abstractions;
 
 namespace RoesteCrmServer.WebApi.Controllers;
 
-public class RatingsController: ApiController
+[Authorize(Roles = "Admin, Manager, User")]
+public class RatingsController(IMediator mediator) : ApiController(mediator)
 {
-    public RatingsController(IMediator mediator) : base(mediator)
-    {
-    }
-    
     [HttpGet]
     public async Task<ActionResult> GetAll([FromQuery]GetAllRatingsQuery request, CancellationToken cancellationToken)
     {

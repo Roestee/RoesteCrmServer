@@ -7,12 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace RoesteCrmServer.WebApi.Controllers;
 
 [AllowAnonymous]
-public class AuthController : ApiController
+public class AuthController(IMediator mediator) : ApiController(mediator)
 {
-    public AuthController(IMediator mediator) : base(mediator)
-    {
-    }
-
     [HttpPost]
     public async Task<IActionResult> Login(LoginCommand request, CancellationToken cancellationToken)
     {

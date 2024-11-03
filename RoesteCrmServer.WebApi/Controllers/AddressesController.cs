@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RoesteCrmServer.Application.Features.Addresses.CreateAddress;
 using RoesteCrmServer.Application.Features.Addresses.DeleteAddressById;
@@ -7,12 +8,9 @@ using RoesteCrmServer.WebApi.Abstractions;
 
 namespace RoesteCrmServer.WebApi.Controllers;
 
-public class AddressesController: ApiController
+[Authorize(Roles = "Admin, Manager, User")]
+public class AddressesController(IMediator mediator) : ApiController(mediator)
 {
-    public AddressesController(IMediator mediator) : base(mediator)
-    {
-    }
-
     [HttpGet]
     public async Task<ActionResult> GetAll([FromQuery]GetAllAddressesQuery request, CancellationToken cancellationToken)
     {

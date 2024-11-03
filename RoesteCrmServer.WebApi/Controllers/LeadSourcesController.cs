@@ -1,16 +1,14 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RoesteCrmServer.Application.Features.LeadSources.GetAllLeadSources;
 using RoesteCrmServer.WebApi.Abstractions;
 
 namespace RoesteCrmServer.WebApi.Controllers;
 
-public class LeadSourcesController: ApiController
+[Authorize(Roles = "Admin, Manager, User")]
+public class LeadSourcesController(IMediator mediator) : ApiController(mediator)
 {
-    public LeadSourcesController(IMediator mediator) : base(mediator)
-    {
-    }
-    
     [HttpGet]
     public async Task<ActionResult> GetAll([FromQuery]GetAllLeadSourcesQuery request, CancellationToken cancellationToken)
     {

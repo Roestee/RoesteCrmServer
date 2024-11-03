@@ -1,16 +1,14 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RoesteCrmServer.Application.Features.LeadStatuses.GetAllLeadStatuses;
 using RoesteCrmServer.WebApi.Abstractions;
 
 namespace RoesteCrmServer.WebApi.Controllers;
 
-public class LeadStatusesController: ApiController
+[Authorize(Roles = "Admin, Manager, User")]
+public class LeadStatusesController(IMediator mediator) : ApiController(mediator)
 {
-    public LeadStatusesController(IMediator mediator) : base(mediator)
-    {
-    }
-    
     [HttpGet]
     public async Task<ActionResult> GetAll([FromQuery]GetAllLeadStatusesQuery request, CancellationToken cancellationToken)
     {
