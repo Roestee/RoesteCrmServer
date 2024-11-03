@@ -10,10 +10,10 @@ public class LeadStatusConfiguration: IEntityTypeConfiguration<LeadStatus>
     {
         builder.Property(l=>l.Name).IsRequired().HasColumnType("nvarchar(30)");
         builder.HasData(
-            new LeadStatus { Name = "New" },
-            new LeadStatus { Name = "Contacted" },
-            new LeadStatus { Name = "Working" }, 
-            new LeadStatus { Name = "Qualified" },
-            new LeadStatus { Name = "Unqualified" });
+            new LeadStatus {Id= Guid.NewGuid(), Name = "Yeni" },
+            new LeadStatus {Id= Guid.NewGuid(), Name = "İletişime Geçildi" },
+            new LeadStatus {Id= Guid.NewGuid(), Name = "Süreç İlerliyor" }, 
+            new LeadStatus {Id= Guid.NewGuid(), Name = "Niteliksiz" },
+            new LeadStatus { Id = Guid.NewGuid(), Name = "Dönüştür" });
     }
 }

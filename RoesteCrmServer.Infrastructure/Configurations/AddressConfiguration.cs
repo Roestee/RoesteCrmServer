@@ -13,7 +13,5 @@ public class AddressConfiguration: IEntityTypeConfiguration<Address>
         builder.Property(a=>a.State).HasColumnType("nvarchar(50)");
         builder.Property(a=>a.Street).HasColumnType("nvarchar(max)");
         builder.Property(a=>a.PostalCode).HasColumnType("nvarchar(50)");
-        
-        
     }
 }

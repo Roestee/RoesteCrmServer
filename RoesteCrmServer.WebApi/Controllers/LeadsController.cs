@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RoesteCrmServer.Application.Features.Leads.CreateLead;
 using RoesteCrmServer.Application.Features.Leads.DeleteLeadById;
@@ -9,6 +10,7 @@ using RoesteCrmServer.WebApi.Abstractions;
 
 namespace RoesteCrmServer.WebApi.Controllers;
 
+[Authorize(Roles = "Admin, Manager, User")]
 public class LeadsController(IMediator mediator) : ApiController(mediator)
 {
     [HttpGet]

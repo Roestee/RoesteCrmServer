@@ -17,6 +17,7 @@ internal sealed class CreateLeadCommandHandler(
         var address = mapper.Map<Address>(request.Address);
         var lead = mapper.Map<Lead>(request);
         lead.Address = address;
+        
         await leadRepository.AddAsync(lead, cancellationToken);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 

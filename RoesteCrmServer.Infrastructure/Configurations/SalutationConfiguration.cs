@@ -11,12 +11,11 @@ public class SalutationConfiguration: IEntityTypeConfiguration<Salutation>
         builder.Property(x=>x.Name).IsRequired().HasColumnType("nvarchar(10)");
         builder.HasData(new[]
         {
-            new Salutation { Name = "Mr." },
-            new Salutation { Name = "Ms." },
-            new Salutation { Name = "Mrs." },
-            new Salutation { Name = "Dr." },
-            new Salutation { Name = "Prof." },
-            new Salutation { Name = "Mx." }
+            new Salutation {Id= Guid.NewGuid(), Name = "Bay" },
+            new Salutation {Id= Guid.NewGuid(), Name = "Bayan" },
+            new Salutation {Id= Guid.NewGuid(), Name = "Dr." },
+            new Salutation {Id= Guid.NewGuid(), Name = "Prof." },
+            new Salutation {Id= Guid.NewGuid(), Name = "Müh." }
         });
     }
 }

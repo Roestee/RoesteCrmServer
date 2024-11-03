@@ -99,6 +99,230 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.ToTable("UserRoles");
                 });
 
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Account", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AccountOwnerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AccountTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BillingAddressId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasAnnotation("EmailAddress", true);
+
+                    b.Property<Guid>("IndustryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ModifiedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<Guid>("ShippingAddressId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Website")
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountOwnerId");
+
+                    b.HasIndex("AccountTypeId");
+
+                    b.HasIndex("BillingAddressId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("IndustryId");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.HasIndex("ShippingAddressId");
+
+                    b.ToTable("Accounts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("4a6a590f-d395-4b41-91d5-f655059a5976"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Müşteri",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("cb500286-4711-460d-951f-14715a515834"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Analist",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("7192a757-9da9-40ea-b62f-0f0d816e6291"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Yarışmacı",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("326b424d-aab5-4b55-a0f2-3f3607ca78e1"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Entegratör",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("abe9f678-a584-4d91-b6e8-9cbd739c9f8f"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Yatırımcı",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("31100159-4c1d-4d9c-af53-ba3db1cce0bf"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Basın",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("ffc71b10-85d4-4065-aa89-d42c9c346fd6"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Bayi",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("c8aa01a9-0eda-4105-bf0f-865bd4fec3d2"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ortak",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("bdcf3580-cf4e-4cbf-8ff2-ab1b152e57e9"),
+                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "",
+                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Diğer",
+                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
+                        });
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.AccountType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AccountTypes");
+                });
+
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Address", b =>
                 {
                     b.Property<Guid>("Id")
@@ -192,6 +416,271 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Case", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AccountId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CaseOriginId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CaseOwnerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CaseStatusId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ContactId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ModifiedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("PriorityId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("CaseOriginId");
+
+                    b.HasIndex("CaseOwnerId");
+
+                    b.HasIndex("CaseStatusId");
+
+                    b.HasIndex("ContactId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.HasIndex("PriorityId");
+
+                    b.ToTable("Cases");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.CaseOrigin", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CaseOrigins");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("fde2823e-f214-4bf7-8e40-289e5ee7481f"),
+                            Name = "Email"
+                        },
+                        new
+                        {
+                            Id = new Guid("2272f0d2-d11e-4d42-9086-b777ee505e7b"),
+                            Name = "Telefon"
+                        },
+                        new
+                        {
+                            Id = new Guid("4ac82344-a4ca-43cc-be7d-cc67d4c216c1"),
+                            Name = "İnternet"
+                        });
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.CaseStatus", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CaseStatuses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("92d21a8f-b75b-4a90-998a-cd49619a0855"),
+                            Name = "Yeni"
+                        },
+                        new
+                        {
+                            Id = new Guid("27d7a0f5-29cb-493d-88b7-db01ee730cdf"),
+                            Name = "Hazırlık"
+                        },
+                        new
+                        {
+                            Id = new Guid("e7292274-f443-470d-969a-a61dd53150d7"),
+                            Name = "Müşteri Bekleniyor"
+                        },
+                        new
+                        {
+                            Id = new Guid("244401ab-7fe7-41b7-9aad-eaa3c5bd936e"),
+                            Name = "İlerletildi"
+                        },
+                        new
+                        {
+                            Id = new Guid("9aa75178-7f1d-400f-a06e-d2cd7be62ddd"),
+                            Name = "Kapandı"
+                        });
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Contact", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AccountId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ContactOwnerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasAnnotation("EmailAddress", true);
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<Guid>("LeadSourceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("MailingAddressId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("MiddleName")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<Guid>("ModifiedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("OtherAddressId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<Guid>("SalutationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Website")
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("ContactOwnerId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("LeadSourceId");
+
+                    b.HasIndex("MailingAddressId");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.HasIndex("OtherAddressId");
+
+                    b.HasIndex("SalutationId");
+
+                    b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.ForecastCategory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ForecastCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("c0f227ed-8382-48f1-bcc4-89252b745c3c"),
+                            Name = "Önceliği Düşük"
+                        },
+                        new
+                        {
+                            Id = new Guid("fbbc9ea0-b0eb-43e6-a3d7-593ac737cd37"),
+                            Name = "Satışta"
+                        },
+                        new
+                        {
+                            Id = new Guid("45fface5-87e6-4aa1-a4da-0587344f1ed7"),
+                            Name = "En İyi Durum"
+                        },
+                        new
+                        {
+                            Id = new Guid("8d0ac490-fcc4-4f54-8a42-22043ddbaf81"),
+                            Name = "Taahhüt Edilmiş"
+                        },
+                        new
+                        {
+                            Id = new Guid("99494938-aa3a-4245-9ef0-3aa6390bed39"),
+                            Name = "Kapandı"
+                        });
+                });
+
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Industry", b =>
                 {
                     b.Property<Guid>("Id")
@@ -209,163 +698,148 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d247949a-5115-44bd-ab16-dd398449dd41"),
-                            Name = "Agriculture"
+                            Id = new Guid("b3d99742-80ca-4529-9681-d14a0acf549a"),
+                            Name = "Tarım"
                         },
                         new
                         {
-                            Id = new Guid("4353b13e-5dc3-4298-9b53-297fb50bc3bb"),
-                            Name = "Apparel"
+                            Id = new Guid("525f8bc5-6972-456d-9832-4d25a3703b6f"),
+                            Name = "Tekstil"
                         },
                         new
                         {
-                            Id = new Guid("2077dc54-270e-447e-add6-f96aec57c3b6"),
-                            Name = "Banking"
+                            Id = new Guid("cc65c13c-8758-42bf-8477-eec9489e0348"),
+                            Name = "Banka"
                         },
                         new
                         {
-                            Id = new Guid("661110ac-f047-4fe0-a5a7-8ccf481b82f2"),
-                            Name = "Biotechnology"
+                            Id = new Guid("d9502ed3-0fae-46c3-91c7-2196bb72651e"),
+                            Name = "Biyoteknoloji"
                         },
                         new
                         {
-                            Id = new Guid("06bac37c-10ce-47e6-988f-43b3d30919f6"),
-                            Name = "Chemicals"
+                            Id = new Guid("acbd924d-f429-4678-8a14-d8a19952bdba"),
+                            Name = "Kimya"
                         },
                         new
                         {
-                            Id = new Guid("e45fc5b0-8fc5-417e-8dae-393599bcd878"),
-                            Name = "Communications"
+                            Id = new Guid("21918219-1322-4c31-b494-5fbcaafb7065"),
+                            Name = "İletişim"
                         },
                         new
                         {
-                            Id = new Guid("4b592d92-ee86-4159-b6c1-ef9070fd4bf9"),
-                            Name = "Construction"
+                            Id = new Guid("42ba8aae-5c43-4727-be99-a8dbb15a6bf5"),
+                            Name = "İnşaat"
                         },
                         new
                         {
-                            Id = new Guid("4b349b9e-5e2b-4ac9-a129-c5f44ed1e8e1"),
-                            Name = "Consulting"
+                            Id = new Guid("84501ca5-d989-49dc-87e0-14c8cd450d65"),
+                            Name = "Danışmanlık"
                         },
                         new
                         {
-                            Id = new Guid("786cb70b-37c3-463e-9ba1-3eec9f7aaac6"),
-                            Name = "Education"
+                            Id = new Guid("a3635097-5e98-4082-9292-4e80609a44ef"),
+                            Name = "Eğitim"
                         },
                         new
                         {
-                            Id = new Guid("a0e55bbc-3d4c-4858-9cfd-8823e5632660"),
-                            Name = "Electronics"
+                            Id = new Guid("855549fe-2d85-45f7-a25f-baedb8acda97"),
+                            Name = "Elektronik"
                         },
                         new
                         {
-                            Id = new Guid("2ede8dc1-fdd0-4ce3-aa58-426fc0ca6163"),
-                            Name = "Energy"
+                            Id = new Guid("9f96bb75-7ca9-4c71-adfe-7a40c10b07e3"),
+                            Name = "Enerji"
                         },
                         new
                         {
-                            Id = new Guid("90393ddc-d71e-474f-8cfb-42fd7815e4cd"),
-                            Name = "Engineering"
+                            Id = new Guid("6464f96d-ea29-474b-9c61-58e6ad1b8c7c"),
+                            Name = "Mühendislik"
                         },
                         new
                         {
-                            Id = new Guid("60d9f8bd-6bdb-4670-9293-39ab260fb624"),
-                            Name = "Entertainment"
+                            Id = new Guid("dd9726fa-3100-40ce-81ec-d788db678bec"),
+                            Name = "Eğlence"
                         },
                         new
                         {
-                            Id = new Guid("cce72c7e-5292-4ea7-b3be-c58b333f1d29"),
-                            Name = "Environmental"
+                            Id = new Guid("f08e7524-59f7-4852-9681-dc6b563123bd"),
+                            Name = "Çevre"
                         },
                         new
                         {
-                            Id = new Guid("8baee2ab-6a59-4a90-87d5-6567c47fbbc6"),
-                            Name = "Finance"
+                            Id = new Guid("f976b29f-0e7c-4547-a3ea-f16c820d2fbe"),
+                            Name = "Finans"
                         },
                         new
                         {
-                            Id = new Guid("567e46bf-a866-403d-93e8-aa9f6c275315"),
-                            Name = "Food & Beverage"
+                            Id = new Guid("5772ae0c-cbf6-402e-8346-9fd1fdbc33d9"),
+                            Name = "Yiyecek ve İçecek"
                         },
                         new
                         {
-                            Id = new Guid("4e8bba07-90c9-43eb-8c11-c554d29a778f"),
-                            Name = "Government"
+                            Id = new Guid("192e0c38-66b2-4071-90ef-3215697966ae"),
+                            Name = "Devlet"
                         },
                         new
                         {
-                            Id = new Guid("aaaabe50-7ef4-4c1e-b7cb-b0f55a293c86"),
-                            Name = "Healthcare"
+                            Id = new Guid("0171099e-1a8b-4af4-b0c7-97c63979773e"),
+                            Name = "Sağlık Hizmeti"
                         },
                         new
                         {
-                            Id = new Guid("2c46fb91-5cb0-4f2a-9e8a-22ea5c3cec21"),
-                            Name = "Hospitality"
+                            Id = new Guid("80b36468-a517-4bdf-a679-6bb79b326b0d"),
+                            Name = "Hastane"
                         },
                         new
                         {
-                            Id = new Guid("1dcafffb-ca9d-4f9b-93ca-e536e410559c"),
-                            Name = "Insurance"
+                            Id = new Guid("75f9d4ce-3a80-4e82-937e-a6073fc881ba"),
+                            Name = "Sigorta"
                         },
                         new
                         {
-                            Id = new Guid("a565bf5a-3d33-43ad-a226-120457b85191"),
+                            Id = new Guid("fe17b623-c557-4da3-8858-3bb279c52aa1"),
                             Name = "Machinery"
                         },
                         new
                         {
-                            Id = new Guid("35687527-94bd-48da-bdb4-ad1e097f2a49"),
-                            Name = "Manufacturing"
+                            Id = new Guid("60beec7e-cc3b-4b78-97d4-6dfb0353a751"),
+                            Name = "Üretim"
                         },
                         new
                         {
-                            Id = new Guid("562ee5b5-5138-4dfd-aa99-9b81d207d4b0"),
-                            Name = "Media"
+                            Id = new Guid("ec83deaa-8ab2-4d3c-8d60-774cbe7bfdfd"),
+                            Name = "Medye"
                         },
                         new
                         {
-                            Id = new Guid("08985c5f-1af8-4c8e-afa8-26f4f41da415"),
-                            Name = "Not for Profit"
+                            Id = new Guid("2b1f7036-0a2b-400f-80d2-f9f56ca88c51"),
+                            Name = "Kar Amaçlı Değil"
                         },
                         new
                         {
-                            Id = new Guid("ab97f49c-e20f-4370-a17d-9edcd2f032e2"),
-                            Name = "Other"
+                            Id = new Guid("e62ce0bf-2e1e-4cf6-a774-a6bd81733133"),
+                            Name = "Diğer"
                         },
                         new
                         {
-                            Id = new Guid("174f6c87-85f6-4228-b9ff-f8376d8625e7"),
-                            Name = "Recreation"
+                            Id = new Guid("ff3049e3-f0f9-4b54-9299-6f899a33d7bb"),
+                            Name = "Nakliye"
                         },
                         new
                         {
-                            Id = new Guid("559f9a42-0028-4086-9975-d4c98ffedefc"),
-                            Name = "Retail"
+                            Id = new Guid("0cf159cb-ba51-4ac8-948d-6fb0d350431c"),
+                            Name = "Telekomünikasyon"
                         },
                         new
                         {
-                            Id = new Guid("dd9eac8e-5065-4433-8940-c62e65acaedb"),
-                            Name = "Shipping"
+                            Id = new Guid("80215334-06c5-40bf-8774-dcf7e845cc61"),
+                            Name = "Ulaşım"
                         },
                         new
                         {
-                            Id = new Guid("a2aada59-1892-4869-924d-501e32a9f9fb"),
-                            Name = "Technology"
-                        },
-                        new
-                        {
-                            Id = new Guid("68b53c92-b654-464d-a9c1-69da28415b8f"),
-                            Name = "Telecommunication"
-                        },
-                        new
-                        {
-                            Id = new Guid("aa157e9f-726b-4bc0-92d4-1f1c5cb24411"),
-                            Name = "Transportation"
-                        },
-                        new
-                        {
-                            Id = new Guid("c70d131f-5a37-4b7d-8e9f-fb721d653f47"),
-                            Name = "Utilities"
+                            Id = new Guid("c284fb27-5542-409b-8981-70d273fa2366"),
+                            Name = "Kamu Kuruluşları"
                         });
                 });
 
@@ -483,53 +957,48 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("81586174-364b-4a16-9120-b6fb1f5b2d72"),
-                            Name = "Advertisement"
+                            Id = new Guid("b6750b94-ceff-4b56-ac1f-1d277c59d1ce"),
+                            Name = "Reklamlar"
                         },
                         new
                         {
-                            Id = new Guid("c59b01a7-15b6-4996-a985-464443d85e3f"),
-                            Name = "Employee Referral"
+                            Id = new Guid("bf906c43-941b-484a-8473-f4fbc0220a6f"),
+                            Name = "Çalışan Tavsiyesi"
                         },
                         new
                         {
-                            Id = new Guid("c900558c-10b3-48c0-a851-87cdb2aa498a"),
-                            Name = "External Referral"
+                            Id = new Guid("44921207-8f6a-42d9-9d6b-de9a8ff9d0c8"),
+                            Name = "Dışarıdan Tavsiye"
                         },
                         new
                         {
-                            Id = new Guid("c79952a4-7d14-43ea-9cff-beae267bb977"),
-                            Name = "In-Store"
+                            Id = new Guid("ea8eb708-44f8-4409-8bc1-fcfe24c2fdcf"),
+                            Name = "Pankart"
                         },
                         new
                         {
-                            Id = new Guid("020021a7-0bc4-49cc-a1b9-e69c1d788eab"),
-                            Name = "On Site"
+                            Id = new Guid("d8f4858c-3e4a-4ba7-ba9f-528318f9d01e"),
+                            Name = "Sosyal Medya"
                         },
                         new
                         {
-                            Id = new Guid("c39b47ee-21f7-452d-be50-cb21b63553a5"),
-                            Name = "Social"
+                            Id = new Guid("24e38675-9210-45d3-8be5-ddcb038b723b"),
+                            Name = "TV"
                         },
                         new
                         {
-                            Id = new Guid("c72179dd-2b62-4e46-aad5-3d8edf8ca6fd"),
-                            Name = "Trade Show"
+                            Id = new Guid("b147ceda-802f-4cf0-b1c1-751e8e3209b6"),
+                            Name = "İnternet"
                         },
                         new
                         {
-                            Id = new Guid("52bf102b-349f-4d8c-b2bd-fd1130def575"),
-                            Name = "Web"
+                            Id = new Guid("cbb9df29-670c-4389-a112-184715f60722"),
+                            Name = "Sözlü Olarak"
                         },
                         new
                         {
-                            Id = new Guid("7880018d-9bfb-48a0-a0f9-d59b9e7cd606"),
-                            Name = "Word of mouth"
-                        },
-                        new
-                        {
-                            Id = new Guid("7de4c411-36df-4872-bd54-361051d3d00c"),
-                            Name = "Other"
+                            Id = new Guid("a63e4439-9720-42f6-8464-524f0f2e87b9"),
+                            Name = "Diğer"
                         });
                 });
 
@@ -550,28 +1019,124 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f5758f85-8aa9-49ce-90bf-ed58022ff2b3"),
-                            Name = "New"
+                            Id = new Guid("83425d0b-22cd-4c77-8f2b-453c0b107359"),
+                            Name = "Yeni"
                         },
                         new
                         {
-                            Id = new Guid("64e116c6-b3fc-463b-9394-ec7026556e7b"),
-                            Name = "Contacted"
+                            Id = new Guid("de5cf535-e93e-439b-9896-228515961b91"),
+                            Name = "İletişime Geçildi"
                         },
                         new
                         {
-                            Id = new Guid("7282ff08-ba41-4824-8ff4-6cb8cfae3ced"),
-                            Name = "Working"
+                            Id = new Guid("d12f3413-fb14-4d27-965c-bfb449a8d0c3"),
+                            Name = "Süreç İlerliyor"
                         },
                         new
                         {
-                            Id = new Guid("bab05c95-b176-4f17-8e2d-42ac73f31b3f"),
-                            Name = "Qualified"
+                            Id = new Guid("698b8527-a23c-49ba-a1a0-d7545eef3a47"),
+                            Name = "Niteliksiz"
                         },
                         new
                         {
-                            Id = new Guid("02a5032d-a84f-4727-a471-af73d79b3ae2"),
-                            Name = "Unqualified"
+                            Id = new Guid("68af74fd-3530-495a-ad1b-b5287a39b2d2"),
+                            Name = "Dönüştür"
+                        });
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Opportunity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AccountId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal?>("Amount")
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<DateTime>("CloseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ForecastCategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ModifiedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<Guid>("OpportunityOwnerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Probability")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid>("StageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("ForecastCategoryId");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.HasIndex("OpportunityOwnerId");
+
+                    b.HasIndex("StageId");
+
+                    b.ToTable("Opportunities");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Priority", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Priorities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("0a3a55fb-c70c-43ec-852f-560fce0a5ade"),
+                            Name = "Yüksek"
+                        },
+                        new
+                        {
+                            Id = new Guid("a7365847-bfe5-4586-af13-40c5743a8be9"),
+                            Name = "Orta"
+                        },
+                        new
+                        {
+                            Id = new Guid("b2c17fd4-73f0-427f-984a-475594e32a77"),
+                            Name = "Düşük"
                         });
                 });
 
@@ -592,18 +1157,18 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4a0c748f-b476-4c58-beb7-8993ee56b876"),
-                            Name = "Hot"
+                            Id = new Guid("98a82a25-532c-4d94-8673-d7331e7c0b16"),
+                            Name = "Sıcak"
                         },
                         new
                         {
-                            Id = new Guid("6d630030-6c69-4f1c-b78a-fc2d9e07da88"),
-                            Name = "Warm"
+                            Id = new Guid("f1196834-2752-41c3-89a8-abf7fbadac84"),
+                            Name = "Ilık"
                         },
                         new
                         {
-                            Id = new Guid("d69d5b9d-539e-4aa3-bc64-d6dc5063f1bf"),
-                            Name = "Cold"
+                            Id = new Guid("041fc186-3b96-41e6-a3a8-3a2b67ae23f7"),
+                            Name = "Soğuk"
                         });
                 });
 
@@ -624,34 +1189,263 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("887e9f41-fe56-4485-8e01-3dc72df910e6"),
-                            Name = "Mr."
+                            Id = new Guid("293812fd-cb17-4979-8d95-9743627fcc33"),
+                            Name = "Bay"
                         },
                         new
                         {
-                            Id = new Guid("0710caf3-3415-46a9-bcf0-09cf84114c13"),
-                            Name = "Ms."
+                            Id = new Guid("a51f9a16-7a43-4adb-8078-ec0b4e48540a"),
+                            Name = "Bayan"
                         },
                         new
                         {
-                            Id = new Guid("791d028b-b9ab-4eaa-ab5f-e44e41672e42"),
-                            Name = "Mrs."
-                        },
-                        new
-                        {
-                            Id = new Guid("2f6aca92-301e-4863-9d1b-17b7303fb981"),
+                            Id = new Guid("16990bb4-b7bd-43e9-ac07-38a97e81ebc5"),
                             Name = "Dr."
                         },
                         new
                         {
-                            Id = new Guid("d0733263-d48f-4a10-a72d-e9b9065a52c3"),
+                            Id = new Guid("e9b35b39-c88c-43f1-82c3-7ab306fc9025"),
                             Name = "Prof."
                         },
                         new
                         {
-                            Id = new Guid("d16cec58-e05c-408b-af7b-bf9775bbc073"),
-                            Name = "Mx."
+                            Id = new Guid("8507215b-c3b2-4348-953d-db6cf7cadeb5"),
+                            Name = "Müh."
                         });
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Stage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Stages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("2d0740cd-b35a-4bf6-adce-43033e68c61c"),
+                            Name = "Hazırlık"
+                        },
+                        new
+                        {
+                            Id = new Guid("093f6f04-a2ae-4368-8c71-800adfb0ea88"),
+                            Name = "Buluşma & Tanışma"
+                        },
+                        new
+                        {
+                            Id = new Guid("770e594f-36bd-43f9-952b-3549e747cf34"),
+                            Name = "Teklif"
+                        },
+                        new
+                        {
+                            Id = new Guid("0743b5ec-5557-4a5c-a5c6-9d3466a8b3f0"),
+                            Name = "Pazarlık"
+                        },
+                        new
+                        {
+                            Id = new Guid("db34717d-c81f-4edc-b71b-43e7acf0d0b8"),
+                            Name = "Kapandı-Kazanıldı"
+                        },
+                        new
+                        {
+                            Id = new Guid("a245a1e0-624d-4b20-b14e-7bcd5f3b6124"),
+                            Name = "Kapandı-Kaybedildi"
+                        });
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Account", b =>
+                {
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "AccountOwner")
+                        .WithMany()
+                        .HasForeignKey("AccountOwnerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AccountType", "AccountType")
+                        .WithMany()
+                        .HasForeignKey("AccountTypeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Address", "BillingAddress")
+                        .WithMany()
+                        .HasForeignKey("BillingAddressId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Industry", "Industry")
+                        .WithMany()
+                        .HasForeignKey("IndustryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Address", "ShippingAddress")
+                        .WithMany()
+                        .HasForeignKey("ShippingAddressId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AccountOwner");
+
+                    b.Navigation("AccountType");
+
+                    b.Navigation("BillingAddress");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("Industry");
+
+                    b.Navigation("ModifiedBy");
+
+                    b.Navigation("ShippingAddress");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Case", b =>
+                {
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId");
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.CaseOrigin", "CaseOrigin")
+                        .WithMany()
+                        .HasForeignKey("CaseOriginId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "CaseOwner")
+                        .WithMany()
+                        .HasForeignKey("CaseOwnerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.CaseStatus", "CaseStatus")
+                        .WithMany()
+                        .HasForeignKey("CaseStatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Contact", "Contact")
+                        .WithMany()
+                        .HasForeignKey("ContactId");
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Priority", "Priority")
+                        .WithMany()
+                        .HasForeignKey("PriorityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("CaseOrigin");
+
+                    b.Navigation("CaseOwner");
+
+                    b.Navigation("CaseStatus");
+
+                    b.Navigation("Contact");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("ModifiedBy");
+
+                    b.Navigation("Priority");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Contact", b =>
+                {
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Account", "Account")
+                        .WithMany("Contacts")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "ContactOwner")
+                        .WithMany()
+                        .HasForeignKey("ContactOwnerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.LeadSource", "LeadSource")
+                        .WithMany()
+                        .HasForeignKey("LeadSourceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Address", "MailingAddress")
+                        .WithMany()
+                        .HasForeignKey("MailingAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Address", "OtherAddress")
+                        .WithMany()
+                        .HasForeignKey("OtherAddressId");
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Salutation", "Salutation")
+                        .WithMany()
+                        .HasForeignKey("SalutationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("ContactOwner");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("LeadSource");
+
+                    b.Navigation("MailingAddress");
+
+                    b.Navigation("ModifiedBy");
+
+                    b.Navigation("OtherAddress");
+
+                    b.Navigation("Salutation");
                 });
 
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Lead", b =>
@@ -728,6 +1522,64 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.Navigation("Rating");
 
                     b.Navigation("Salutation");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Opportunity", b =>
+                {
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Account", "Account")
+                        .WithMany("Opportunities")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.ForecastCategory", "ForecastCategory")
+                        .WithMany()
+                        .HasForeignKey("ForecastCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "OpportunityOwner")
+                        .WithMany()
+                        .HasForeignKey("OpportunityOwnerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Stage", "Stage")
+                        .WithMany()
+                        .HasForeignKey("StageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("ForecastCategory");
+
+                    b.Navigation("ModifiedBy");
+
+                    b.Navigation("OpportunityOwner");
+
+                    b.Navigation("Stage");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Account", b =>
+                {
+                    b.Navigation("Contacts");
+
+                    b.Navigation("Opportunities");
                 });
 
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.AppUser", b =>

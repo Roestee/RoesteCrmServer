@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using RoesteCrmServer.Application.Features.Accounts.CreateAccount;
+using RoesteCrmServer.Application.Features.Accounts.UpdateAccount;
 using RoesteCrmServer.Application.Features.Addresses.CreateAddress;
 using RoesteCrmServer.Application.Features.Leads.CreateLead;
 using RoesteCrmServer.Application.Features.Leads.UpdateLead;
@@ -21,6 +23,9 @@ public sealed class MappingProfile: Profile
         CreateMap<CreateLeadCommand, Lead>();
         CreateMap<CreateLeadCommand, Address>();
         CreateMap<UpdateLeadCommand, Lead>();
+
+        CreateMap<CreateAccountCommand, Account>();
+        CreateMap<UpdateAccountCommand, Account>();
         
         CreateMap<CreateLeadStatusesCommand, LeadStatus>();
         CreateMap<CreateAddressCommand, Address>();

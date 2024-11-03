@@ -12,12 +12,23 @@ public sealed class ApplicationDbContext : IdentityDbContext<
     Guid>, IUnitOfWork
 {
     public DbSet<Lead> Leads { get; set; }
+    public DbSet<Account> Accounts { get; set; }
+    public DbSet<Contact> Contacts { get; set; }
+    public DbSet<Opportunity> Opportunities { get; set; }
+    public DbSet<Case> Cases { get; set; }
+    
     public DbSet<LeadStatus> LeadStatuses { get; set; }
     public DbSet<Salutation> Salutations { get; set; }
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Rating> Ratings { get; set; }
     public DbSet<LeadSource> LeadSources { get; set; }
     public DbSet<Industry> Industries { get; set; }
+    public DbSet<AccountType> AccountTypes { get; set; }
+    public DbSet<Stage> Stages { get; set; }
+    public DbSet<ForecastCategory> ForecastCategories { get; set; }
+    public DbSet<CaseStatus> CaseStatuses { get; set; }
+    public DbSet<CaseOrigin> CaseOrigins { get; set; }
+    public DbSet<Priority> Priorities { get; set; }
 
     public ApplicationDbContext()
     {

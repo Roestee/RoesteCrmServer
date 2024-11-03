@@ -10,15 +10,14 @@ public class LeadSourceConfiguration: IEntityTypeConfiguration<LeadSource>
     {
         builder.Property(ls=> ls.Name).IsRequired().HasColumnType("nvarchar(50)");
         builder.HasData(
-            new LeadSource{Name = "Advertisement"}, 
-            new LeadSource{Name = "Employee Referral"},
-            new LeadSource{Name = "External Referral"},
-            new LeadSource{Name = "In-Store"},
-            new LeadSource{Name = "On Site"},
-            new LeadSource{Name = "Social"},
-            new LeadSource{Name = "Trade Show"},
-            new LeadSource{Name = "Web"}, 
-            new LeadSource{Name = "Word of mouth"},
-            new LeadSource{Name = "Other"});
+            new LeadSource{Id= Guid.NewGuid(), Name = "Reklamlar"}, 
+            new LeadSource{Id= Guid.NewGuid(), Name = "Çalışan Tavsiyesi"},
+            new LeadSource{Id= Guid.NewGuid(), Name = "Dışarıdan Tavsiye"},
+            new LeadSource{Id= Guid.NewGuid(), Name = "Pankart"},
+            new LeadSource{Id= Guid.NewGuid(), Name = "Sosyal Medya"},
+            new LeadSource{Id= Guid.NewGuid(), Name = "TV"},
+            new LeadSource{Id= Guid.NewGuid(), Name = "İnternet"}, 
+            new LeadSource{Id= Guid.NewGuid(), Name = "Sözlü Olarak"},
+            new LeadSource{Id= Guid.NewGuid(), Name = "Diğer"});
     }
 }
