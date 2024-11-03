@@ -21,7 +21,7 @@ public static class ExtensionsMiddleware
 
             foreach(var role in roles)
             {
-                if (await roleManager.RoleExistsAsync(role.Name))
+                if (await roleManager.RoleExistsAsync(role.Name!))
                 {
                     continue;
                 }

@@ -13,7 +13,7 @@ public class ForecastCategoriesController(IMediator mediator) : ApiController(me
     public async Task<IActionResult> GetAll([FromQuery] GetAllForecastCategoriesQuery request,
         CancellationToken cancellationToken)
     {
-        var response = await mediator.Send(request, cancellationToken);
+        var response = await _mediator.Send(request, cancellationToken);
         return StatusCode(response.StatusCode, response);
     }
 }

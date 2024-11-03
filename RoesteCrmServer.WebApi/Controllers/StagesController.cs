@@ -12,7 +12,7 @@ public class StagesController(IMediator mediator) : ApiController(mediator)
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery] GetAllStagesQuery request, CancellationToken cancellationToken)
     {
-        var response = await mediator.Send(request, cancellationToken);
+        var response = await _mediator.Send(request, cancellationToken);
         return StatusCode(response.StatusCode, response);
     }
 }
