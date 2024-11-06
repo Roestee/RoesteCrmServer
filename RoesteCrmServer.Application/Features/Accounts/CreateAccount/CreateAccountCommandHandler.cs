@@ -20,6 +20,7 @@ internal sealed class CreateAccountCommandHandler(
             
         var account = mapper.Map<Account>(request);
         await accountRepository.AddAsync(account, cancellationToken);
+        await unitOfWork.SaveChangesAsync(cancellationToken);
             
         return Result<Account>.Succeed(account, "Hesap başarıyla oluşturuldu.");
     }

@@ -13,5 +13,8 @@ public sealed record CreateAccountCommand(
     Guid AccountOwnerId, 
     Guid IndustryId, 
     Guid AccountTypeId,
+    Guid CreatedById,
+    Guid ModifiedById,
+    AccountType AccountType,
     Address? BillingAddress,
     Address? ShippingAddress): IRequest<Result<Account>>;

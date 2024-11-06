@@ -31,4 +31,10 @@ public class Account: Entity
     
     public ICollection<Contact>? Contacts { get; set; }
     public ICollection<Opportunity>? Opportunities { get; set; }
+
+    public Account()
+    {
+        CreatedDate = DateTime.Now;
+        ModifiedDate = DateTime.Now;
+    }
 }
