@@ -18,14 +18,15 @@ internal sealed class UpdateAccountCommandHandler(
         var account = await accountRepository
             .WhereWithTracking(a => a.Id == request.Id)
             .FirstOrDefaultAsync(cancellationToken);
-        
-        if(account is null)
+
+        if (account is null)
             return Result<Account>.Failure("Hesap bulunamadı.");
-        
-        var isEmailExist = await accountRepository.AnyAsync(a=>a.Email == request.Email, cancellationToken);
+
+        var isEmailExist =
+            await accountRepository.AnyAsync(a => a.Id != request.Id && a.Email == request.Email, cancellationToken);
         if (isEmailExist)
             return Result<Account>.Failure("Eposta adresi daha önce kaydedilmiş.");
-        
+
         mapper.Map(request, account);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
@@ -38,12 +39,12 @@ internal sealed class UpdateAccountCommandHandler(
             .Include(a => a.ShippingAddress)
             .Include(a => a.CreatedBy)
             .Include(a => a.ModifiedBy)
-            .Include(a=>a.Contacts)
-            .Include(a=>a.Opportunities)
+            .Include(a => a.Contacts)
+            .Include(a => a.Opportunities)
             .FirstOrDefaultAsync(cancellationToken);
-        
-        return updatedAccount is null 
-            ? Result<Account>.Failure("Hesap bulunamadı!") 
-            : Result<Account>.Succeed(updatedAccount, "Hesap başarıyla kaydedildi.");
+
+        return updatedAccount is null
+            ? Result<Account>.Failure("Hesap bulunamadı!")
+            : Result<Account>.Succeed(updatedAccount, "Hesap başarıyla güncellendi.");
     }
 }
