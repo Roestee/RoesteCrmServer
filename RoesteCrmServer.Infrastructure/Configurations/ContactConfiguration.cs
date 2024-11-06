@@ -8,7 +8,7 @@ public class ContactConfiguration: IEntityTypeConfiguration<Contact>
 {
     public void Configure(EntityTypeBuilder<Contact> builder)
     {
-        builder.Property(co=>co.FirstName).IsRequired().HasColumnType("nvarchar(30)");
+        builder.Property(co=>co.FirstName).IsRequired().HasColumnType("nvarchar(50)");
         builder.Property(co=>co.LastName).IsRequired().HasColumnType("nvarchar(50)");
         builder.Property(co=>co.Email).IsRequired().HasAnnotation("EmailAddress", true).HasMaxLength(100);
         builder.Property(co=>co.MiddleName).HasColumnType("nvarchar(50)");

@@ -4,9 +4,9 @@ using RoesteCrmServer.Domain.Entities;
 
 namespace RoesteCrmServer.Infrastructure.Configurations;
 
-public class AccountTypeConfiguration: IEntityTypeConfiguration<Account>
+public class AccountTypeConfiguration: IEntityTypeConfiguration<AccountType>
 {
-    public void Configure(EntityTypeBuilder<Account> builder)
+    public void Configure(EntityTypeBuilder<AccountType> builder)
     {
         builder.Property(a => a.Name).IsRequired().HasColumnType("nvarchar(20)");
         builder.HasData(new[]

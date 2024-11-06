@@ -27,4 +27,10 @@ public class Case: Entity
     public Account? Account { get; set; }
     public AppUser? CreatedBy { get; set; }
     public AppUser? ModifiedBy { get; set; }
+
+    public Case()
+    {
+        CreatedDate = DateTime.Now;
+        ModifiedDate = DateTime.Now;
+    }
 }
