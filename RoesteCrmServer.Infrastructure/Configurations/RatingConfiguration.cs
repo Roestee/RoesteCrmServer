@@ -10,8 +10,8 @@ public class RatingConfiguration: IEntityTypeConfiguration<Rating>
     {
         builder.Property(r=>r.Name).IsRequired().HasColumnType("nvarchar(20)");
         builder.HasData(
-            new Rating {Id= Guid.NewGuid(), Name = "Sıcak" },
-            new Rating {Id= Guid.NewGuid(), Name = "Ilık" },
+            new Rating { Id = Guid.NewGuid(), Name = "Sıcak" },
+            new Rating { Id = Guid.NewGuid(), Name = "Ilık" },
             new Rating { Id = Guid.NewGuid(), Name = "Soğuk" });
     }
 }

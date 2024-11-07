@@ -11,11 +11,11 @@ public class ForecastCategoryConfiguration: IEntityTypeConfiguration<ForecastCat
         builder.Property(f=>f.Name).HasColumnType("nvarchar(30)");
         builder.HasData(new[]
         {
-            new ForecastCategory { Id= Guid.NewGuid(), Name = "Önceliği Düşük" },
-            new ForecastCategory { Id= Guid.NewGuid(), Name = "Satışta" },
-            new ForecastCategory { Id= Guid.NewGuid(), Name = "En İyi Durum" },
-            new ForecastCategory { Id= Guid.NewGuid(), Name = "Taahhüt Edilmiş" },
-            new ForecastCategory { Id= Guid.NewGuid(), Name = "Kapandı" },
+            new ForecastCategory { Id = Guid.NewGuid(), Name = "Önceliği Düşük" },
+            new ForecastCategory { Id = Guid.NewGuid(), Name = "Satışta" },
+            new ForecastCategory { Id = Guid.NewGuid(), Name = "En İyi Durum" },
+            new ForecastCategory { Id = Guid.NewGuid(), Name = "Taahhüt Edilmiş" },
+            new ForecastCategory { Id = Guid.NewGuid(), Name = "Kapandı" },
         });
     }
 }

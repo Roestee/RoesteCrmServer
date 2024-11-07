@@ -111,7 +111,7 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.Property<Guid>("AccountTypeId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("BillingAddressId")
+                    b.Property<Guid?>("BillingAddressId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CreatedById")
@@ -140,13 +140,13 @@ namespace RoesteCrmServer.Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Phone")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<Guid>("ShippingAddressId")
+                    b.Property<Guid?>("ShippingAddressId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Website")
@@ -169,143 +169,6 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasIndex("ShippingAddressId");
 
                     b.ToTable("Accounts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("4a6a590f-d395-4b41-91d5-f655059a5976"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Müşteri",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("cb500286-4711-460d-951f-14715a515834"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Analist",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("7192a757-9da9-40ea-b62f-0f0d816e6291"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Yarışmacı",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("326b424d-aab5-4b55-a0f2-3f3607ca78e1"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Entegratör",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("abe9f678-a584-4d91-b6e8-9cbd739c9f8f"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Yatırımcı",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("31100159-4c1d-4d9c-af53-ba3db1cce0bf"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Basın",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("ffc71b10-85d4-4065-aa89-d42c9c346fd6"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Bayi",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("c8aa01a9-0eda-4105-bf0f-865bd4fec3d2"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Ortak",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("bdcf3580-cf4e-4cbf-8ff2-ab1b152e57e9"),
-                            AccountOwnerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            AccountTypeId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            BillingAddressId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "",
-                            IndustryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedById = new Guid("00000000-0000-0000-0000-000000000000"),
-                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Diğer",
-                            ShippingAddressId = new Guid("00000000-0000-0000-0000-000000000000")
-                        });
                 });
 
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.AccountType", b =>
@@ -316,11 +179,58 @@ namespace RoesteCrmServer.Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
                     b.ToTable("AccountTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f4c7af49-cfa3-426a-b216-f982a54fad08"),
+                            Name = "Müşteri"
+                        },
+                        new
+                        {
+                            Id = new Guid("0343dd9e-9b17-4b45-aeeb-65179e4b9c77"),
+                            Name = "Analist"
+                        },
+                        new
+                        {
+                            Id = new Guid("1df01e17-ff8b-42cc-aaa5-deb9a7b81db1"),
+                            Name = "Yarışmacı"
+                        },
+                        new
+                        {
+                            Id = new Guid("71ab980e-fb55-4d46-905e-8e2009a699fb"),
+                            Name = "Entegratör"
+                        },
+                        new
+                        {
+                            Id = new Guid("fd9c080f-5966-441d-906c-8b1fc1a9a541"),
+                            Name = "Yatırımcı"
+                        },
+                        new
+                        {
+                            Id = new Guid("327b0888-1aff-492e-9eec-cf71efc4ac04"),
+                            Name = "Basın"
+                        },
+                        new
+                        {
+                            Id = new Guid("9f53efab-617b-4862-b63d-cd37cc25b5e0"),
+                            Name = "Bayi"
+                        },
+                        new
+                        {
+                            Id = new Guid("58bc6a43-c4a4-45c1-9959-b2867e6f73a6"),
+                            Name = "Ortak"
+                        },
+                        new
+                        {
+                            Id = new Guid("daba73fa-1a77-4eef-8695-8cce611407ed"),
+                            Name = "Diğer"
+                        });
                 });
 
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Address", b =>
@@ -498,17 +408,17 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("fde2823e-f214-4bf7-8e40-289e5ee7481f"),
+                            Id = new Guid("5f5f7166-1519-4dd1-93fb-9699548afa4e"),
                             Name = "Email"
                         },
                         new
                         {
-                            Id = new Guid("2272f0d2-d11e-4d42-9086-b777ee505e7b"),
+                            Id = new Guid("b1e617fd-5c8d-475d-9ad8-146ecd583e80"),
                             Name = "Telefon"
                         },
                         new
                         {
-                            Id = new Guid("4ac82344-a4ca-43cc-be7d-cc67d4c216c1"),
+                            Id = new Guid("03c1e2af-e09d-4037-a1c4-1a55b585efa5"),
                             Name = "İnternet"
                         });
                 });
@@ -530,27 +440,27 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("92d21a8f-b75b-4a90-998a-cd49619a0855"),
+                            Id = new Guid("407db69f-8736-4245-ae61-4d6cf178b9be"),
                             Name = "Yeni"
                         },
                         new
                         {
-                            Id = new Guid("27d7a0f5-29cb-493d-88b7-db01ee730cdf"),
+                            Id = new Guid("85775ab0-f04a-4474-b4a6-dad1981aa851"),
                             Name = "Hazırlık"
                         },
                         new
                         {
-                            Id = new Guid("e7292274-f443-470d-969a-a61dd53150d7"),
+                            Id = new Guid("bb961cb8-ec0e-4108-9012-28abdbe5f755"),
                             Name = "Müşteri Bekleniyor"
                         },
                         new
                         {
-                            Id = new Guid("244401ab-7fe7-41b7-9aad-eaa3c5bd936e"),
+                            Id = new Guid("da384904-242f-4734-ace5-98c6542c9605"),
                             Name = "İlerletildi"
                         },
                         new
                         {
-                            Id = new Guid("9aa75178-7f1d-400f-a06e-d2cd7be62ddd"),
+                            Id = new Guid("f81b5a50-9d1c-4df4-b764-405614142d08"),
                             Name = "Kapandı"
                         });
                 });
@@ -570,6 +480,9 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.Property<Guid>("CreatedById")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Department")
                         .HasColumnType("nvarchar(150)");
 
@@ -584,7 +497,7 @@ namespace RoesteCrmServer.Infrastructure.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -601,6 +514,9 @@ namespace RoesteCrmServer.Infrastructure.Migrations
 
                     b.Property<Guid>("ModifiedById")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid?>("OtherAddressId")
                         .HasColumnType("uniqueidentifier");
@@ -639,6 +555,61 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.File", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AccountId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ContactId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Extension")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid?>("LeadId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ModifiedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("OpportunityId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(400)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("ContactId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("LeadId");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.HasIndex("OpportunityId");
+
+                    b.ToTable("Files");
+                });
+
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.ForecastCategory", b =>
                 {
                     b.Property<Guid>("Id")
@@ -656,27 +627,27 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c0f227ed-8382-48f1-bcc4-89252b745c3c"),
+                            Id = new Guid("323db6d2-09ac-40ad-9f79-bc7f504df570"),
                             Name = "Önceliği Düşük"
                         },
                         new
                         {
-                            Id = new Guid("fbbc9ea0-b0eb-43e6-a3d7-593ac737cd37"),
+                            Id = new Guid("debefce3-c1d9-4a91-9512-7fe509de7be2"),
                             Name = "Satışta"
                         },
                         new
                         {
-                            Id = new Guid("45fface5-87e6-4aa1-a4da-0587344f1ed7"),
+                            Id = new Guid("d153d477-25b3-4f05-82a5-6ccde6cf246b"),
                             Name = "En İyi Durum"
                         },
                         new
                         {
-                            Id = new Guid("8d0ac490-fcc4-4f54-8a42-22043ddbaf81"),
+                            Id = new Guid("19f15f6c-4388-4463-9cf7-7b09707b3323"),
                             Name = "Taahhüt Edilmiş"
                         },
                         new
                         {
-                            Id = new Guid("99494938-aa3a-4245-9ef0-3aa6390bed39"),
+                            Id = new Guid("f701dd2b-607e-4776-87bb-a65a12bd321a"),
                             Name = "Kapandı"
                         });
                 });
@@ -698,147 +669,142 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b3d99742-80ca-4529-9681-d14a0acf549a"),
+                            Id = new Guid("221ec7ce-9978-437b-a857-330cf367c937"),
                             Name = "Tarım"
                         },
                         new
                         {
-                            Id = new Guid("525f8bc5-6972-456d-9832-4d25a3703b6f"),
+                            Id = new Guid("da0afed8-27bf-4ea3-9754-7098a654744b"),
                             Name = "Tekstil"
                         },
                         new
                         {
-                            Id = new Guid("cc65c13c-8758-42bf-8477-eec9489e0348"),
+                            Id = new Guid("dc551779-24d1-4144-a6f0-d8adcdecd8c8"),
                             Name = "Banka"
                         },
                         new
                         {
-                            Id = new Guid("d9502ed3-0fae-46c3-91c7-2196bb72651e"),
+                            Id = new Guid("40e16cea-4cbb-44b7-95ec-712e42f007d9"),
                             Name = "Biyoteknoloji"
                         },
                         new
                         {
-                            Id = new Guid("acbd924d-f429-4678-8a14-d8a19952bdba"),
+                            Id = new Guid("725adb4c-80c3-402c-a53d-b6da051da1e2"),
                             Name = "Kimya"
                         },
                         new
                         {
-                            Id = new Guid("21918219-1322-4c31-b494-5fbcaafb7065"),
+                            Id = new Guid("f6b250e9-e6cb-4b05-bd54-23a98a75fdde"),
                             Name = "İletişim"
                         },
                         new
                         {
-                            Id = new Guid("42ba8aae-5c43-4727-be99-a8dbb15a6bf5"),
+                            Id = new Guid("7b752db3-faeb-4e60-a105-f98960fd2f78"),
                             Name = "İnşaat"
                         },
                         new
                         {
-                            Id = new Guid("84501ca5-d989-49dc-87e0-14c8cd450d65"),
+                            Id = new Guid("30a0b5bd-b473-4bbc-9583-a56f06cff2b8"),
                             Name = "Danışmanlık"
                         },
                         new
                         {
-                            Id = new Guid("a3635097-5e98-4082-9292-4e80609a44ef"),
+                            Id = new Guid("fc7b8207-2d85-4553-bfa2-634f45b63836"),
                             Name = "Eğitim"
                         },
                         new
                         {
-                            Id = new Guid("855549fe-2d85-45f7-a25f-baedb8acda97"),
+                            Id = new Guid("d0e4584a-52c6-4fcf-a266-b351c27c051b"),
                             Name = "Elektronik"
                         },
                         new
                         {
-                            Id = new Guid("9f96bb75-7ca9-4c71-adfe-7a40c10b07e3"),
+                            Id = new Guid("1ed44957-1193-4a1d-a88d-5cf450e094a2"),
                             Name = "Enerji"
                         },
                         new
                         {
-                            Id = new Guid("6464f96d-ea29-474b-9c61-58e6ad1b8c7c"),
+                            Id = new Guid("f4b63ee1-bd48-424d-9fea-cf6d503cb9e5"),
                             Name = "Mühendislik"
                         },
                         new
                         {
-                            Id = new Guid("dd9726fa-3100-40ce-81ec-d788db678bec"),
+                            Id = new Guid("454d9ef5-bfbc-4760-91f7-939676637bb6"),
                             Name = "Eğlence"
                         },
                         new
                         {
-                            Id = new Guid("f08e7524-59f7-4852-9681-dc6b563123bd"),
+                            Id = new Guid("6de59c93-2860-46ae-b927-e2c670be6d5c"),
                             Name = "Çevre"
                         },
                         new
                         {
-                            Id = new Guid("f976b29f-0e7c-4547-a3ea-f16c820d2fbe"),
+                            Id = new Guid("73a687dc-07ff-4b04-9c99-e81ee7577303"),
                             Name = "Finans"
                         },
                         new
                         {
-                            Id = new Guid("5772ae0c-cbf6-402e-8346-9fd1fdbc33d9"),
+                            Id = new Guid("a8ed04ed-30e6-4ced-9177-6e5a5826eed2"),
                             Name = "Yiyecek ve İçecek"
                         },
                         new
                         {
-                            Id = new Guid("192e0c38-66b2-4071-90ef-3215697966ae"),
+                            Id = new Guid("0416ffa5-5735-406a-ac2a-6a2500e955f0"),
                             Name = "Devlet"
                         },
                         new
                         {
-                            Id = new Guid("0171099e-1a8b-4af4-b0c7-97c63979773e"),
+                            Id = new Guid("efa3e3b6-b8dd-42d8-8c3e-6cda738f986f"),
                             Name = "Sağlık Hizmeti"
                         },
                         new
                         {
-                            Id = new Guid("80b36468-a517-4bdf-a679-6bb79b326b0d"),
+                            Id = new Guid("0ced0969-86d0-474b-856d-cd0fe5f6fef6"),
                             Name = "Hastane"
                         },
                         new
                         {
-                            Id = new Guid("75f9d4ce-3a80-4e82-937e-a6073fc881ba"),
+                            Id = new Guid("88cefdca-a8a4-473a-bd33-7cbe255b9eda"),
                             Name = "Sigorta"
                         },
                         new
                         {
-                            Id = new Guid("fe17b623-c557-4da3-8858-3bb279c52aa1"),
-                            Name = "Machinery"
-                        },
-                        new
-                        {
-                            Id = new Guid("60beec7e-cc3b-4b78-97d4-6dfb0353a751"),
+                            Id = new Guid("4f087302-9ae4-47a6-8c90-84b964f6f4cf"),
                             Name = "Üretim"
                         },
                         new
                         {
-                            Id = new Guid("ec83deaa-8ab2-4d3c-8d60-774cbe7bfdfd"),
-                            Name = "Medye"
+                            Id = new Guid("4884a883-d21e-4b5b-9d7a-6565881fb5d9"),
+                            Name = "Medya"
                         },
                         new
                         {
-                            Id = new Guid("2b1f7036-0a2b-400f-80d2-f9f56ca88c51"),
+                            Id = new Guid("1195f7ed-6ef8-4fd8-a3e3-8e188aea13e7"),
                             Name = "Kar Amaçlı Değil"
                         },
                         new
                         {
-                            Id = new Guid("e62ce0bf-2e1e-4cf6-a774-a6bd81733133"),
+                            Id = new Guid("99841b4b-e099-4883-94ab-dac567662d34"),
                             Name = "Diğer"
                         },
                         new
                         {
-                            Id = new Guid("ff3049e3-f0f9-4b54-9299-6f899a33d7bb"),
+                            Id = new Guid("ba688907-ad67-44dc-b1c2-fb42bffd06e0"),
                             Name = "Nakliye"
                         },
                         new
                         {
-                            Id = new Guid("0cf159cb-ba51-4ac8-948d-6fb0d350431c"),
+                            Id = new Guid("f99e45ba-f038-42b1-97b0-f3f2839e57e5"),
                             Name = "Telekomünikasyon"
                         },
                         new
                         {
-                            Id = new Guid("80215334-06c5-40bf-8774-dcf7e845cc61"),
+                            Id = new Guid("7efa2c60-a3a4-4186-8be0-eb5b8040d8ea"),
                             Name = "Ulaşım"
                         },
                         new
                         {
-                            Id = new Guid("c284fb27-5542-409b-8981-70d273fa2366"),
+                            Id = new Guid("b6ae2a5a-e862-4b27-89f4-7a20677dfe96"),
                             Name = "Kamu Kuruluşları"
                         });
                 });
@@ -957,47 +923,47 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b6750b94-ceff-4b56-ac1f-1d277c59d1ce"),
+                            Id = new Guid("de4fe7e2-4d73-4239-b000-abcdec094317"),
                             Name = "Reklamlar"
                         },
                         new
                         {
-                            Id = new Guid("bf906c43-941b-484a-8473-f4fbc0220a6f"),
+                            Id = new Guid("09e745be-365a-477b-a693-02412ce27e4d"),
                             Name = "Çalışan Tavsiyesi"
                         },
                         new
                         {
-                            Id = new Guid("44921207-8f6a-42d9-9d6b-de9a8ff9d0c8"),
+                            Id = new Guid("53c73dd4-1bbc-4968-8730-fb97a2fe4e16"),
                             Name = "Dışarıdan Tavsiye"
                         },
                         new
                         {
-                            Id = new Guid("ea8eb708-44f8-4409-8bc1-fcfe24c2fdcf"),
+                            Id = new Guid("a0bf09a1-439e-4480-b995-ab530dfdd4a1"),
                             Name = "Pankart"
                         },
                         new
                         {
-                            Id = new Guid("d8f4858c-3e4a-4ba7-ba9f-528318f9d01e"),
+                            Id = new Guid("585253d2-0181-4d22-9403-f539fdc7d337"),
                             Name = "Sosyal Medya"
                         },
                         new
                         {
-                            Id = new Guid("24e38675-9210-45d3-8be5-ddcb038b723b"),
+                            Id = new Guid("57d11a28-d4f6-49cf-8274-f679e075228f"),
                             Name = "TV"
                         },
                         new
                         {
-                            Id = new Guid("b147ceda-802f-4cf0-b1c1-751e8e3209b6"),
+                            Id = new Guid("d2b0a3c6-1cce-4362-b2ef-97024f158466"),
                             Name = "İnternet"
                         },
                         new
                         {
-                            Id = new Guid("cbb9df29-670c-4389-a112-184715f60722"),
+                            Id = new Guid("3f3c8598-7ea1-433f-b573-711497720c6f"),
                             Name = "Sözlü Olarak"
                         },
                         new
                         {
-                            Id = new Guid("a63e4439-9720-42f6-8464-524f0f2e87b9"),
+                            Id = new Guid("fc06f89c-e8ed-4b65-85c8-c1344aff26be"),
                             Name = "Diğer"
                         });
                 });
@@ -1019,27 +985,27 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("83425d0b-22cd-4c77-8f2b-453c0b107359"),
+                            Id = new Guid("a5c1ddf1-a866-46d8-bbf8-486dc33ba4f4"),
                             Name = "Yeni"
                         },
                         new
                         {
-                            Id = new Guid("de5cf535-e93e-439b-9896-228515961b91"),
+                            Id = new Guid("988cc800-ed1a-42bb-bb71-79727e7f35f2"),
                             Name = "İletişime Geçildi"
                         },
                         new
                         {
-                            Id = new Guid("d12f3413-fb14-4d27-965c-bfb449a8d0c3"),
+                            Id = new Guid("14f26733-b151-43c9-ad51-882edd62cce4"),
                             Name = "Süreç İlerliyor"
                         },
                         new
                         {
-                            Id = new Guid("698b8527-a23c-49ba-a1a0-d7545eef3a47"),
+                            Id = new Guid("d4ed242c-e590-466e-b5fc-309266e42bd7"),
                             Name = "Niteliksiz"
                         },
                         new
                         {
-                            Id = new Guid("68af74fd-3530-495a-ad1b-b5287a39b2d2"),
+                            Id = new Guid("c70661fa-0bcd-4aee-bc00-a961a1a54d67"),
                             Name = "Dönüştür"
                         });
                 });
@@ -1125,17 +1091,17 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0a3a55fb-c70c-43ec-852f-560fce0a5ade"),
+                            Id = new Guid("72ef0c90-598a-4eb2-a216-d8d9bd6d16f2"),
                             Name = "Yüksek"
                         },
                         new
                         {
-                            Id = new Guid("a7365847-bfe5-4586-af13-40c5743a8be9"),
+                            Id = new Guid("c857d13c-62ac-45c0-af71-3a79eaa602af"),
                             Name = "Orta"
                         },
                         new
                         {
-                            Id = new Guid("b2c17fd4-73f0-427f-984a-475594e32a77"),
+                            Id = new Guid("862bc289-63f7-4295-9603-c4e5f571b4f2"),
                             Name = "Düşük"
                         });
                 });
@@ -1157,17 +1123,17 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("98a82a25-532c-4d94-8673-d7331e7c0b16"),
+                            Id = new Guid("0f36c216-9e3f-42d7-9aca-1a6bd399206f"),
                             Name = "Sıcak"
                         },
                         new
                         {
-                            Id = new Guid("f1196834-2752-41c3-89a8-abf7fbadac84"),
+                            Id = new Guid("c9f075c5-7e91-4736-8c7a-4e7aa263adae"),
                             Name = "Ilık"
                         },
                         new
                         {
-                            Id = new Guid("041fc186-3b96-41e6-a3a8-3a2b67ae23f7"),
+                            Id = new Guid("ec5dae9d-1921-41c9-b18c-402fee4fcd40"),
                             Name = "Soğuk"
                         });
                 });
@@ -1189,27 +1155,27 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("293812fd-cb17-4979-8d95-9743627fcc33"),
+                            Id = new Guid("000a5e40-088c-421c-9154-dfe622997a0f"),
                             Name = "Bay"
                         },
                         new
                         {
-                            Id = new Guid("a51f9a16-7a43-4adb-8078-ec0b4e48540a"),
+                            Id = new Guid("3cd759c3-eba0-4014-a073-000aea330b65"),
                             Name = "Bayan"
                         },
                         new
                         {
-                            Id = new Guid("16990bb4-b7bd-43e9-ac07-38a97e81ebc5"),
+                            Id = new Guid("485aafcb-9382-4c40-98ed-2243c06aea91"),
                             Name = "Dr."
                         },
                         new
                         {
-                            Id = new Guid("e9b35b39-c88c-43f1-82c3-7ab306fc9025"),
+                            Id = new Guid("fb980b82-bb7d-4383-9f63-7ef1ff38902e"),
                             Name = "Prof."
                         },
                         new
                         {
-                            Id = new Guid("8507215b-c3b2-4348-953d-db6cf7cadeb5"),
+                            Id = new Guid("f889b276-18cd-4d7f-a4e8-a7c66573fa3f"),
                             Name = "Müh."
                         });
                 });
@@ -1231,32 +1197,32 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2d0740cd-b35a-4bf6-adce-43033e68c61c"),
+                            Id = new Guid("9a37c9c1-17c4-420f-8637-f90af4af47d4"),
                             Name = "Hazırlık"
                         },
                         new
                         {
-                            Id = new Guid("093f6f04-a2ae-4368-8c71-800adfb0ea88"),
+                            Id = new Guid("9a06bb49-ea84-4390-93d8-2a4defd877fd"),
                             Name = "Buluşma & Tanışma"
                         },
                         new
                         {
-                            Id = new Guid("770e594f-36bd-43f9-952b-3549e747cf34"),
+                            Id = new Guid("62ab1a08-9148-4f1f-82be-813f9cc1ee1b"),
                             Name = "Teklif"
                         },
                         new
                         {
-                            Id = new Guid("0743b5ec-5557-4a5c-a5c6-9d3466a8b3f0"),
+                            Id = new Guid("503faa82-196d-4885-a713-d70ef1b8fdae"),
                             Name = "Pazarlık"
                         },
                         new
                         {
-                            Id = new Guid("db34717d-c81f-4edc-b71b-43e7acf0d0b8"),
+                            Id = new Guid("e3301145-1bcf-473e-a38e-fc100c60e41a"),
                             Name = "Kapandı-Kazanıldı"
                         },
                         new
                         {
-                            Id = new Guid("a245a1e0-624d-4b20-b14e-7bcd5f3b6124"),
+                            Id = new Guid("bc990331-b3f7-4fee-bfaf-8a07f89e300e"),
                             Name = "Kapandı-Kaybedildi"
                         });
                 });
@@ -1278,8 +1244,7 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasOne("RoesteCrmServer.Domain.Entities.Address", "BillingAddress")
                         .WithMany()
                         .HasForeignKey("BillingAddressId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "CreatedBy")
                         .WithMany()
@@ -1302,8 +1267,7 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.HasOne("RoesteCrmServer.Domain.Entities.Address", "ShippingAddress")
                         .WithMany()
                         .HasForeignKey("ShippingAddressId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("AccountOwner");
 
@@ -1448,6 +1412,49 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                     b.Navigation("Salutation");
                 });
 
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.File", b =>
+                {
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Account", "Account")
+                        .WithMany("Files")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Contact", "Contact")
+                        .WithMany("Files")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById");
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Lead", "Lead")
+                        .WithMany("Files")
+                        .HasForeignKey("LeadId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.AppUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById");
+
+                    b.HasOne("RoesteCrmServer.Domain.Entities.Opportunity", "Opportunity")
+                        .WithMany("Files")
+                        .HasForeignKey("OpportunityId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Account");
+
+                    b.Navigation("Contact");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("Lead");
+
+                    b.Navigation("ModifiedBy");
+
+                    b.Navigation("Opportunity");
+                });
+
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Lead", b =>
                 {
                     b.HasOne("RoesteCrmServer.Domain.Entities.Address", "Address")
@@ -1579,12 +1586,29 @@ namespace RoesteCrmServer.Infrastructure.Migrations
                 {
                     b.Navigation("Contacts");
 
+                    b.Navigation("Files");
+
                     b.Navigation("Opportunities");
                 });
 
             modelBuilder.Entity("RoesteCrmServer.Domain.Entities.AppUser", b =>
                 {
                     b.Navigation("Leads");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Contact", b =>
+                {
+                    b.Navigation("Files");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Lead", b =>
+                {
+                    b.Navigation("Files");
+                });
+
+            modelBuilder.Entity("RoesteCrmServer.Domain.Entities.Opportunity", b =>
+                {
+                    b.Navigation("Files");
                 });
 #pragma warning restore 612, 618
         }

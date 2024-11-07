@@ -19,6 +19,7 @@ internal sealed class GetAllOpportunitiesQueryHandler(
             .Include(o => o.ForecastCategory)
             .Include(o => o.CreatedBy)
             .Include(o => o.ModifiedBy)
+            .Include(a=>a.Files)
             .ToListAsync(cancellationToken);
 
         return opportunities;

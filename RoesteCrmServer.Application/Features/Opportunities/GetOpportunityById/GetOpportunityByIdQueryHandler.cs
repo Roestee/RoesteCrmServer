@@ -19,6 +19,7 @@ internal sealed class GetOpportunityByIdQueryHandler(
             .Include(o => o.ForecastCategory)
             .Include(o => o.CreatedBy)
             .Include(o => o.ModifiedBy)
+            .Include(a=>a.Files)
             .FirstOrDefaultAsync(cancellationToken);
         
         return opportunity ?? Result<Opportunity>.Failure("Fırsat bulunamadı!");

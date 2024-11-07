@@ -22,6 +22,7 @@ internal sealed class GetLeadByIdWithDetailQueryHandler(
             .Include(l=>l.LeadSource)
             .Include(l=>l.CreatedBy)
             .Include(l=>l.ModifiedBy)
+            .Include(a=>a.Files)
             .FirstOrDefaultAsync(cancellationToken);
         
         return lead ?? Result<Lead>.Failure("Potansiyel müşteri bulunamadı!");

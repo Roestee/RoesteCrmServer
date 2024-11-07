@@ -22,6 +22,7 @@ internal sealed class GetAccountByIdQueryHandler(
             .Include(a => a.ModifiedBy)
             .Include(a=>a.Contacts)
             .Include(a=>a.Opportunities)
+            .Include(a=>a.Files)
             .FirstOrDefaultAsync(cancellationToken);
         
         return account ?? Result<Account>.Failure("Hesap bulunamadı!");

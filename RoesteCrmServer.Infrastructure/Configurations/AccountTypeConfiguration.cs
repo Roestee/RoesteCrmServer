@@ -11,15 +11,15 @@ public class AccountTypeConfiguration: IEntityTypeConfiguration<AccountType>
         builder.Property(a => a.Name).IsRequired().HasColumnType("nvarchar(20)");
         builder.HasData(new[]
         {
-            new Account { Name = "Müşteri" },
-            new Account { Name = "Analist" },
-            new Account { Name = "Yarışmacı" },
-            new Account { Name = "Entegratör" },
-            new Account { Name = "Yatırımcı" },
-            new Account { Name = "Basın" },
-            new Account { Name = "Bayi" },
-            new Account { Name = "Ortak" },
-            new Account { Name = "Diğer" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Müşteri" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Analist" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Yarışmacı" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Entegratör" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Yatırımcı" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Basın" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Bayi" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Ortak" },
+            new AccountType { Id = Guid.NewGuid(), Name = "Diğer" },
         });
     }
 }

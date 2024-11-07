@@ -11,9 +11,9 @@ public class CaseOriginConfiguration: IEntityTypeConfiguration<CaseOrigin>
         builder.Property(co=>co.Name).IsRequired().HasColumnType("nvarchar(10)");
         builder.HasData(new[]
         {
-            new CaseOrigin { Id= Guid.NewGuid(), Name = "Email" },
-            new CaseOrigin { Id= Guid.NewGuid(), Name = "Telefon" },
-            new CaseOrigin { Id= Guid.NewGuid(), Name = "İnternet" },
+            new CaseOrigin { Id = Guid.NewGuid(), Name = "Email" },
+            new CaseOrigin { Id = Guid.NewGuid(), Name = "Telefon" },
+            new CaseOrigin { Id = Guid.NewGuid(), Name = "İnternet" },
         });
     }
 }

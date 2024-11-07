@@ -22,6 +22,7 @@ internal sealed class GetAllAccountsWithDetailQueryHandler(
             .Include(a => a.ModifiedBy)
             .Include(a=>a.Contacts)
             .Include(a=>a.Opportunities)
+            .Include(a=>a.Files)
             .ToListAsync(cancellationToken);
         return accounts;
     }

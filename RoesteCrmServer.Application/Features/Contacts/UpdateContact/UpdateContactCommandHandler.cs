@@ -23,22 +23,26 @@ internal sealed class UpdateContactCommandHandler(
         var contact = await contactRepository
             .WhereWithTracking(c => c.Id == request.Id)
             .FirstOrDefaultAsync(cancellationToken);
-        
+
         mapper.Map(request, contact);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
         var updatedContact = await contactRepository
             .Where(c => c.Id == request.Id)
-            .Include(c=>c.MailingAddress)
-            .Include(c=>c.OtherAddress)
-            .Include(c=>c.Salutation)
-            .Include(c=>c.ContactOwner)
-            .Include(c=>c.CreatedBy)
-            .Include(c=>c.ModifiedBy)
-            .Include(c=>c.LeadSource)
-            .Include(c=>c.Account)
+            .Include(c => c.MailingAddress)
+            .Include(c => c.OtherAddress)
+            .Include(c => c.Salutation)
+            .Include(c => c.ContactOwner)
+            .Include(c => c.CreatedBy)
+            .Include(c => c.ModifiedBy)
+            .Include(c => c.LeadSource)
+            .Include(c => c.Account)
+            .Include(a=>a.Files)
             .FirstOrDefaultAsync(cancellationToken);
 
-        return Result<Contact>.Succeed(updatedContact, "İrtibat başarıyla eklendi.");
+        return
+            updatedContact is null
+                ? Result<Contact>.Failure("Güncellenen irtibat bulunamadı!")
+                : Result<Contact>.Succeed(updatedContact, "İrtibat başarıyla eklendi.");
     }
 }

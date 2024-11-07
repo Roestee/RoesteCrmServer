@@ -35,8 +35,12 @@ internal sealed class UpdateLeadCommandHandler(
             .Include(l => l.LeadSource)
             .Include(l => l.CreatedBy)
             .Include(l => l.ModifiedBy)
+            .Include(a=>a.Files)
             .FirstOrDefaultAsync(cancellationToken);
         
-        return Result<Lead>.Succeed(updatedLead, "Müşteri başarıyla güncellendi.");
+        return 
+            updatedLead is null
+                ? Result<Lead>.Failure("Güncellenen müşteri bulunamadı!")
+                : Result<Lead>.Succeed(updatedLead, "Müşteri başarıyla güncellendi.");
     }
 }

@@ -29,6 +29,7 @@ public sealed class ApplicationDbContext : IdentityDbContext<
     public DbSet<CaseStatus> CaseStatuses { get; set; }
     public DbSet<CaseOrigin> CaseOrigins { get; set; }
     public DbSet<Priority> Priorities { get; set; }
+    public DbSet<Domain.Entities.File> Files { get; set; }
 
     public ApplicationDbContext()
     {

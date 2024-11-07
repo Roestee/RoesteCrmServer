@@ -16,9 +16,9 @@ internal sealed class GetAllUsersWithRolesQueryHandler(
             u.Id
             ,u.FirstName
             ,u.LastName
-            ,u.UserName
-            ,u.Email
-            ,u.PhoneNumber
+            ,u.UserName?? ""
+            ,u.Email?? ""
+            ,u.PhoneNumber?? ""
             ,userManager.GetRolesAsync(u).Result.FirstOrDefault())
         ).ToList();
 

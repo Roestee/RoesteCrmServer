@@ -21,6 +21,7 @@ internal sealed class GetAllLeadsWithDetailQueryHandler(
             .Include(l => l.Rating)
             .Include(l => l.Salutation)
             .Include(l=>l.LeadOwner)
+            .Include(a=>a.Files)
             .ToListAsync(cancellationToken);
 
         return leads;

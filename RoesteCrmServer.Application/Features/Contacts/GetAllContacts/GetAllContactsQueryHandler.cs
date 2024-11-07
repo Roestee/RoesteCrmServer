@@ -21,6 +21,7 @@ internal sealed class GetAllContactsQueryHandler(
             .Include(c=>c.ModifiedBy)
             .Include(c=>c.LeadSource)
             .Include(c=>c.Account)
+            .Include(a=>a.Files)
             .ToListAsync(cancellationToken);
         
         return contacts;

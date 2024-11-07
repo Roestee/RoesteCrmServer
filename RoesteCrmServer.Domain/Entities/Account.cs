@@ -31,6 +31,7 @@ public class Account: Entity
     
     public ICollection<Contact>? Contacts { get; set; }
     public ICollection<Opportunity>? Opportunities { get; set; }
+    public ICollection<File>? Files { get; set; }
 
     public Account()
     {

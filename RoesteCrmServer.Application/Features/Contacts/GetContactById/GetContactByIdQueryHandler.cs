@@ -21,11 +21,9 @@ internal sealed class GetContactByIdQueryHandler(
             .Include(c=>c.ModifiedBy)
             .Include(c=>c.LeadSource)
             .Include(c=>c.Account)
+            .Include(a=>a.Files)
             .FirstOrDefaultAsync(cancellationToken);
-        
-        if (contact is null)
-            Result<Contact>.Failure("İrtibat bulunamadı!");
 
-        return contact;
+        return contact ?? Result<Contact>.Failure("İrtibat bulunamadı!");
     }
 }

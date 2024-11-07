@@ -34,6 +34,8 @@ public class Contact: Entity
     public AppUser? ContactOwner { get; set; }
     public AppUser? CreatedBy { get; set; }
     public AppUser? ModifiedBy { get; set; }
+    
+    public ICollection<File>? Files { get; set; }
 
     public Contact()
     {

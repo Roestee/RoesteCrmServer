@@ -26,6 +26,8 @@ public class Opportunity: Entity
     public ForecastCategory? ForecastCategory { get; set; }
     public AppUser? CreatedBy { get; set; }
     public AppUser? ModifiedBy { get; set; }
+    
+    public ICollection<File>? Files { get; set; }
 
     public Opportunity()
     {

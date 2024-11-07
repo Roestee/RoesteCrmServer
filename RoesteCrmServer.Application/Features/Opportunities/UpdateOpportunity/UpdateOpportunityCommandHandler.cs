@@ -23,7 +23,20 @@ internal sealed class UpdateOpportunityCommandHandler(
             
         mapper.Map(request, opportunity);
         await unitOfWork.SaveChangesAsync(cancellationToken);
+        var updatedOpportunity = await opportunityRepository
+            .Where(o => o.Id == request.Id)
+            .Include(o => o.OpportunityOwner)
+            .Include(o => o.Account)
+            .Include(o => o.Stage)
+            .Include(o => o.ForecastCategory)
+            .Include(o => o.CreatedBy)
+            .Include(o => o.ModifiedBy)
+            .Include(a=>a.Files)
+            .FirstOrDefaultAsync(cancellationToken);
             
-        return Result<Opportunity>.Succeed(opportunity, "Fırsat başarıyla güncellendi.");
+        return 
+            updatedOpportunity is null
+            ? Result<Opportunity>.Failure("Güncellenen fırsat bulunamadı!")
+            : Result<Opportunity>.Succeed(updatedOpportunity, "Fırsat başarıyla güncellendi.");
     }
 }

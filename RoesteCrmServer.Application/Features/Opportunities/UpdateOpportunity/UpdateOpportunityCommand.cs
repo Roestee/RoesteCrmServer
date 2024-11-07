@@ -14,4 +14,6 @@ public sealed record UpdateOpportunityCommand(
     Guid OpportunityOwnerId,
     Guid AccountId,
     Guid StageId,
-    Guid ForecastCategoryId): IRequest<Result<Opportunity>>;
+    Guid ForecastCategoryId,
+    Guid CreatedById,
+    Guid ModifiedById): IRequest<Result<Opportunity>>;
