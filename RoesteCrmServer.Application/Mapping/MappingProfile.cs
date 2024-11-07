@@ -7,6 +7,8 @@ using RoesteCrmServer.Application.Features.Contacts.UpdateContact;
 using RoesteCrmServer.Application.Features.Leads.CreateLead;
 using RoesteCrmServer.Application.Features.Leads.UpdateLead;
 using RoesteCrmServer.Application.Features.LeadStatuses.CreateLeadStatuses;
+using RoesteCrmServer.Application.Features.Opportunities.CreateOpportunity;
+using RoesteCrmServer.Application.Features.Opportunities.UpdateOpportunity;
 using RoesteCrmServer.Application.Features.Users.CreateUser;
 using RoesteCrmServer.Application.Features.Users.UpdateUser;
 using RoesteCrmServer.Domain.Entities;
@@ -31,6 +33,9 @@ public sealed class MappingProfile: Profile
 
         CreateMap<CreateContactCommand, Contact>();
         CreateMap<UpdateContactCommand, Contact>();
+        
+        CreateMap<CreateOpportunityCommand, Opportunity>();
+        CreateMap<UpdateOpportunityCommand, Opportunity>();
         
         CreateMap<CreateLeadStatusesCommand, LeadStatus>();
         CreateMap<CreateAddressCommand, Address>();
