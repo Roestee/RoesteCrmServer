@@ -6,10 +6,10 @@ using RoesteCrmServer.Domain.Entities;
 
 namespace RoesteCrmServer.Infrastructure.Context;
 
-public sealed class ApplicationDbContext : IdentityDbContext<
+public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<
     AppUser,
     IdentityRole<Guid>,
-    Guid>, IUnitOfWork
+    Guid>(options), IUnitOfWork
 {
     public DbSet<Lead> Leads { get; set; }
     public DbSet<Account> Accounts { get; set; }
@@ -30,14 +30,6 @@ public sealed class ApplicationDbContext : IdentityDbContext<
     public DbSet<CaseOrigin> CaseOrigins { get; set; }
     public DbSet<Priority> Priorities { get; set; }
     public DbSet<Domain.Entities.File> Files { get; set; }
-
-    public ApplicationDbContext()
-    {
-        
-    }
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-    {
-    }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
